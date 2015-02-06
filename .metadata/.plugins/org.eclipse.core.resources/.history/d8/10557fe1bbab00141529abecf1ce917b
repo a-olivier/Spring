@@ -1,0 +1,22 @@
+package hello.application.web;
+
+import hello.application.beans.Zip;
+import hello.application.mongo.repo.ZipRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/zips")
+public class ZipController {
+	
+	@Autowired
+	private ZipRepository repository; 
+
+	@RequestMapping("/")
+	public Zip mainResponse(){
+		return new Zip();
+	}
+	
+}

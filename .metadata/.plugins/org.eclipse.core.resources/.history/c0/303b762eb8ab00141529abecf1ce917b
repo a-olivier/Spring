@@ -1,0 +1,9 @@
+package hello.application.mongo.repo;
+
+import hello.application.beans.Customer;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public class ZipRepository MongoRepository<Zip, String> {
+
+}

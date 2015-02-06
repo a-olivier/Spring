@@ -1,0 +1,5 @@
+package hello.application.beans;
+
+public class Zip {
+
+}

@@ -1,0 +1,156 @@
+/**
+ * 
+ */
+package hello.application.mongo.repo.impl;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+
+import hello.application.beans.Zips;
+import hello.application.mongo.repo.ZipsRepository;
+
+/**
+ * @author a.olivier
+ *
+ */
+public class ZipsRepositoryImpl implements ZipsRepository {
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.mongodb.repository.MongoRepository#save(java.lang.Iterable)
+	 */
+	@Override
+	public <S extends Zips> List<S> save(Iterable<S> entites) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.mongodb.repository.MongoRepository#findAll()
+	 */
+	@Override
+	public List<Zips> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.mongodb.repository.MongoRepository#findAll(org.springframework.data.domain.Sort)
+	 */
+	@Override
+	public List<Zips> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.PagingAndSortingRepository#findAll(org.springframework.data.domain.Pageable)
+	 */
+	@Override
+	public Page<Zips> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#save(java.lang.Object)
+	 */
+	@Override
+	public <S extends Zips> S save(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#findOne(java.io.Serializable)
+	 */
+	@Override
+	public Zips findOne(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#exists(java.io.Serializable)
+	 */
+	@Override
+	public boolean exists(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#findAll(java.lang.Iterable)
+	 */
+	@Override
+	public Iterable<Zips> findAll(Iterable<String> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#count()
+	 */
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#delete(java.io.Serializable)
+	 */
+	@Override
+	public void delete(String id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#delete(java.lang.Object)
+	 */
+	@Override
+	public void delete(Zips entity) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#delete(java.lang.Iterable)
+	 */
+	@Override
+	public void delete(Iterable<? extends Zips> entities) {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.data.repository.CrudRepository#deleteAll()
+	 */
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	/* (non-Javadoc)
+	 * @see hello.application.mongo.repo.ZipsRepository#findByState(java.lang.String)
+	 */
+	@Override
+	public List<Zips> findByState(String state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see hello.application.mongo.repo.ZipsRepository#test()
+	 */
+	@Override
+	public Zips test() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

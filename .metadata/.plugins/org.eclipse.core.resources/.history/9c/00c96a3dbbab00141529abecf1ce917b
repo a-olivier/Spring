@@ -1,0 +1,12 @@
+package hello.application.mongo.repo;
+
+import hello.application.beans.Zip;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Component;
+
+@Component
+public interface ZipRepository extends MongoRepository<Zip, String> {
+
+	public Zip findByState(String state);
+}

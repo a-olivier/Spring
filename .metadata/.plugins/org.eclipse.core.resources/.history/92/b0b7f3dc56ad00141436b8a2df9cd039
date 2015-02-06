@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package hello.application.mongo.repo.impl;
+
+import hello.application.beans.Zips;
+import hello.application.mongo.repo.ZipsRepository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+/**
+ * @author a.olivier
+ *
+ */
+@Component
+public class ZipsRepositoryImpl implements ZipsRepository {
+
+	@Override
+	public List<Zips> findByState(String state) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Zips test() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+}
