@@ -72,7 +72,7 @@ ReflectionMadness/
 ###########################
 ## projet Gradle
 ###########################
-Gradle/.*
+
 
 
 *.pydevproject
