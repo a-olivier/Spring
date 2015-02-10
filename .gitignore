@@ -59,6 +59,22 @@ $RECYCLE.BIN/
 *.lnk
 
 ######################### perso 
+
+#############################
+## autre projet dans le wk 
+#############################
+spring/
+Angular/
+Flux/
+RemoteSystemsFiles/
+ReflectionMadness/
+
+###########################
+## projet Gradle
+###########################
+Gradle/.*
+
+
 *.pydevproject
 .metadata
 .gradle
