@@ -24,15 +24,13 @@ public class ZipController {
 	}
 	
 	@RequestMapping("/state/{state}")
-	public List<Zips> getFromStateName(@PathVariable String state){
-//		List<Zips> findAll = repository.findAll();
-//		
-//		System.out.println(findAll.get(32));
-		
-//		repository.save(new Zip("city",new ArrayList<String>(),0,"az"));
-		
-//		return repository.findByState(state);
-		return null;
+	public List<Zips> getFromStateName(@PathVariable String state){		
+		return repository.findByState(state);
+	}
+	
+	@RequestMapping("/all")
+	public List<Zips> getAllStates(){
+		return repository.findAll();
 	}
 	
 	@RequestMapping("/test")

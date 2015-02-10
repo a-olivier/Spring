@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Angular&apos;" deleteContents="true" description="Delete resource &apos;Angular&apos;" element1="/Angular" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1421682839773"/>&#x0A;<refactoring comment="Delete resource &apos;Angular/WebContent/hello.html&apos;" deleteContents="false" description="Delete resource &apos;Angular/WebContent/hello.html&apos;" element1="/Angular/WebContent/hello.html" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1421683243666"/>
-</session>

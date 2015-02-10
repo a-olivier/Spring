@@ -1,5 +1,0 @@
-package hello.application.mongo.repo;
-
-public class ZipRepository {
-
-}

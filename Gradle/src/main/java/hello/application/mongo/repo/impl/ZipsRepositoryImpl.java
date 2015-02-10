@@ -21,17 +21,15 @@ import com.mongodb.MongoClient;
  * @author a.olivier
  *
  */
-@Component
-public class ZipsRepositoryImpl implements ZipsRepository {
+public class ZipsRepositoryImpl {
 
-	@Override
+	
 	public List<Zips> findByState(String state) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Zips test() throws UnknownHostException {
+		public Zips test() throws UnknownHostException {
 		MongoOperations mongOps = new MongoTemplate(new MongoClient(), "test");
 		System.out.println(mongOps.getCollectionNames());
 		
