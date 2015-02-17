@@ -17,7 +17,7 @@ public class Zips {
 	
 	@Override
 	public String toString() {
-		return "Zips [city=" + city + ", loc=" + loc + ", pop=" + pop
+		return "[city=" + city + ", loc=" + loc + ", pop=" + pop
 				+ ", state=" + state + "]";
 	}
 

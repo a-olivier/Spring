@@ -4,6 +4,7 @@ import hello.application.beans.Zips;
 import hello.application.mongo.repo.ZipsRepository;
 
 import java.net.UnknownHostException;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/zips")
+@RequestMapping("Gradle/zips")
 public class ZipController {
 	
 	@Autowired
@@ -30,7 +31,14 @@ public class ZipController {
 	
 	@RequestMapping("/all")
 	public List<Zips> getAllStates(){
-		return repository.findAll();
+		List<Zips> allZip =  repository.findAll();
+		
+		for (Iterator iterator = allZip.iterator(); iterator.hasNext();) {
+			Zips zips = (Zips) iterator.next();
+			System.out.println(zips);
+		}
+		
+		return allZip;
 	}
 	
 	@RequestMapping("/test")
@@ -38,4 +46,5 @@ public class ZipController {
 		System.out.println(repository.test());
 		
 	}
+	
 }

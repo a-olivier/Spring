@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="graddleFront">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Gradle -- dev</title>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/main.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/service.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+</head>
+<body ng-controller="gr_controllerz">
+	<ul>
+		<li ng-repeat="zip in listeZip">{{zip}}</li>
+	</ul>
+	<button ng-click="getAllZips()" ng-init="count=0">
+		Increment</button>
+</body>
+</html>
