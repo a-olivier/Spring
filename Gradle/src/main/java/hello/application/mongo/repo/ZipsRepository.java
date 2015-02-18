@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public interface ZipsRepository extends MongoRepository<Zips, String>{
 
 	public List<Zips> findByState(String state);
-	
+	public List<Zips> findFirst100ByStateOrderByCityAsc(String state);
 	public Zips test() throws UnknownHostException;
 	
 }

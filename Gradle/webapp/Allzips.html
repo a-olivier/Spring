@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="graddleFront">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Gradle -- dev</title>
+<script type="text/javascript" src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
+<!-- js  -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/service.js"></script>
+
+<!-- css -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-controller="gr_controllerz">
+	<div class="container">
+		<script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+		<button class="btn btn-default" ng-click="open()">Open me!</button>
+		<button class="btn btn-default" ng-click="open('lg')">Large
+			modal</button>
+		<button class="btn btn-default" ng-click="open('sm')">Small
+			modal</button>
+		<div ng-show="selected">Selection from a modal: {{ selected }}</div>
+
+
+		<div class="row">
+			<div class="col-lg-4">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<th>city</th>
+						<th>population</th>
+						<th>state</th>
+						<th>id</th>
+					</tr>
+					<tr ng-repeat="zip in listeZip">
+						<td>{{zip.city}}</td>
+						<td>{{zip.pop}}</td>
+						<td>{{zip.state}}</td>
+						<td><form role="form" novalidate>
+								<div class="form-group">
+									<label for="email">city :</label> <input type="text"
+										class="form-control" id="city" ng-model="zip.city">
+								</div>
+								<div class="form-group">
+									<label for="pwd">Population : </label> <input type="text"
+										class="form-control" id="pop" ng-model="zip.pop">
+								</div>
+								<div class="form-group">
+									<label for="pwd">State : </label> <input type="text"
+										class="form-control" id="state" ng-model="zip.state">
+								</div>
+
+							</form></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-lg-2">
+				<button ng-click="getAllZips()" ng-init="count=0">remplir
+					tableau</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

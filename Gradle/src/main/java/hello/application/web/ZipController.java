@@ -41,9 +41,16 @@ public class ZipController {
 		return allZip;
 	}
 	
-	@RequestMapping("/test")
-	public void test() throws UnknownHostException{
-		System.out.println(repository.test());
+	@RequestMapping("/test/{state}")
+	public List<Zips> test(@PathVariable String state) throws UnknownHostException{
+		
+		List<Zips> findFirst100ByState = repository.findFirst100ByStateOrderByCityAsc(state);
+		
+		for (Zips zips : findFirst100ByState) {
+			System.out.println(zips);
+		}
+		
+		return findFirst100ByState;
 		
 	}
 	
