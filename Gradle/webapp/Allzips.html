@@ -3,12 +3,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Gradle -- dev</title>
-<script type="text/javascript" src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
-<!-- js  -->
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script type="text/javascript"
+	src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
+<!-- js  -->
+<script type="text/javascript"
+	src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/controllers.js"></script>
@@ -25,69 +28,72 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+
+
+<script type="text/ng-template" id="myModalContent.html">
+        						<div class="modal-header">
+            						<h3 class="modal-title">Modification de la cit&eacute;e</h3>
+        						</div>
+        						<div class="modal-body">
+								
+            						<form role="form" novalidate>
+										<div class="form-group">
+											<label for="email">city :</label> <input type="text"
+											class="form-control" id="city" ng-model="zip.city">{{zip.city}}</input> 
+										</div>
+										<div class="form-group">
+											<label for="pwd">Population : </label> <input type="text"
+											class="form-control" id="pop" ng-model="zip.pop">
+										</div>
+										<div class="form-group">
+											<label for="pwd">State : </label> <input type="text"
+											class="form-control" id="state" ng-model="zip.state">
+										</div>
+									</form>
+        						</div>
+        						<div class="modal-footer">
+            						<button class="btn btn-primary" ng-click="ok()">OK</button>
+           							<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+       							</div>
+    						</script>
+
+
 </head>
-<body ng-controller="gr_controllerz">
+<body ng-controller="gr_controllerz.main">
 	<div class="container">
-		<script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a ng-click="selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
-		<button class="btn btn-default" ng-click="open()">Open me!</button>
-		<button class="btn btn-default" ng-click="open('lg')">Large
-			modal</button>
-		<button class="btn btn-default" ng-click="open('sm')">Small
-			modal</button>
-		<div ng-show="selected">Selection from a modal: {{ selected }}</div>
-
-
+		<div class="jumbotron">
+			<h1>Consultation et &eacute;dition</h1>
+			<p>cliquer sur le bouton pour remplir le tableau, puis sur les
+				lignes pour les &eacute;diter.</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="#" role="button"
+					ng-click="getAllZips()">Remplir le tableau</a>
+			</p>
+			<p><div class="progress" ng-show="showProgress">
+				<div class="progress-bar progress-bar-striped active"
+					role="progressbar" aria-valuenow="100" aria-valuemin="0"
+					aria-valuemax="100" style="width: 100%">
+  </div>
+</div>
+			</p>
+			
+		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-6 col-lg-offset-3">
+				<span class="glyphicons glyphicons-pen"></span>
 				<table class="table table-bordered table-hover">
 					<tr>
 						<th>city</th>
 						<th>population</th>
 						<th>state</th>
-						<th>id</th>
 					</tr>
-					<tr ng-repeat="zip in listeZip">
+					<tr ng-repeat="zip in listeZip" ng-controller="gr_controllerz.line"
+						ng-click="open('sm')">
 						<td>{{zip.city}}</td>
 						<td>{{zip.pop}}</td>
 						<td>{{zip.state}}</td>
-						<td><form role="form" novalidate>
-								<div class="form-group">
-									<label for="email">city :</label> <input type="text"
-										class="form-control" id="city" ng-model="zip.city">
-								</div>
-								<div class="form-group">
-									<label for="pwd">Population : </label> <input type="text"
-										class="form-control" id="pop" ng-model="zip.pop">
-								</div>
-								<div class="form-group">
-									<label for="pwd">State : </label> <input type="text"
-										class="form-control" id="state" ng-model="zip.state">
-								</div>
-
-							</form></td>
 					</tr>
 				</table>
-			</div>
-			<div class="col-lg-2">
-				<button ng-click="getAllZips()" ng-init="count=0">remplir
-					tableau</button>
 			</div>
 		</div>
 	</div>
