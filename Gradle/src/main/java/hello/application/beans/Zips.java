@@ -3,8 +3,10 @@ package hello.application.beans;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class Zips {
+@Document(collection="zips")
+public class Zips  {
 
 	@Id
 	private String id; 

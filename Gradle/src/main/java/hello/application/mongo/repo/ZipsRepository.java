@@ -6,13 +6,15 @@ import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
-public interface ZipsRepository extends MongoRepository<Zips, String>{
+@Repository
+public interface ZipsRepository extends MongoRepository<Zips, String> {
 
 	public List<Zips> findByState(String state);
 	public List<Zips> findFirst100ByStateOrderByCityAsc(String state);
-	public Zips test() throws UnknownHostException;
-	
+
+//	
+//	@Query(fields = "{'state' : 1 }")
+//	public List<String> findAllState();
 }

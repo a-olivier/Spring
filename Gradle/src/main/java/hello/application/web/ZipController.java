@@ -4,8 +4,12 @@ import hello.application.beans.Zips;
 import hello.application.mongo.repo.ZipsRepository;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +33,23 @@ public class ZipController {
 		return repository.findByState(state);
 	}
 	
+	
+	@RequestMapping("/state/all")
+	public List<String> getState(){		
+		
+		List<Zips> findDistinctAllState = repository.findAll();
+		
+		Set<String> setState = new HashSet<String>();
+		for (Zips zips : findDistinctAllState) {
+			setState.add(zips.getState());
+		}
+		
+		for (String uniQ : setState) {
+			System.out.println(uniQ);
+		}
+	return new ArrayList<String>(setState);
+	}
+	
 	@RequestMapping("/all")
 	public List<Zips> getAllStates(){
 		List<Zips> allZip =  repository.findAll();
@@ -41,7 +62,7 @@ public class ZipController {
 		return allZip;
 	}
 	
-	@RequestMapping("/test/{state}")
+	@RequestMapping("/all/{state}")
 	public List<Zips> test(@PathVariable String state) throws UnknownHostException{
 		
 		List<Zips> findFirst100ByState = repository.findFirst100ByStateOrderByCityAsc(state);
@@ -53,5 +74,22 @@ public class ZipController {
 		return findFirst100ByState;
 		
 	}
+	
+	@RequestMapping("/test")
+	public void testMe(){
+		List<Zips> findDistinctAllState = repository.findAll();
+		
+		Set<String> setState = new HashSet<String>();
+		for (Zips zips : findDistinctAllState) {
+			setState.add(zips.getState());
+		}
+		
+		for (String uniQ : setState) {
+			System.out.println(uniQ);
+		}
+		
+	}
+	
+	
 	
 }
