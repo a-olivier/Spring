@@ -29,7 +29,8 @@ public class ZipController {
 	}
 	
 	@RequestMapping("/state/{state}")
-	public List<Zips> getFromStateName(@PathVariable String state){		
+	public List<Zips> getFromStateName(@PathVariable String state){	
+		System.out.println("state all : " + state);
 		return repository.findByState(state);
 	}
 	

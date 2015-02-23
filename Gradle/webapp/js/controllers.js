@@ -10,7 +10,7 @@ graddleFrontControllerz.controller('gr_controllerz.line', function($scope,
 	$scope.open = function(size) {
 		var modalInstance = $modal.open({
 			templateUrl : 'myModalContent.html',
-			controller : 'ModalDemoCtrl',
+			controller : 'ModalModifCtrl',
 			size : size,
 			resolve : {
 				zip : function() {
@@ -23,12 +23,15 @@ graddleFrontControllerz.controller('gr_controllerz.line', function($scope,
 	};
 });
 
+/////////////////////////////////////////////////////////////////////////////
+//
+// Controleur de la page principale
+//
+/////////////////////////////////////////////////////////////////////////////
 graddleFrontControllerz.controller('gr_controllerz.main', function($scope,
 		Zips, $modal , $timeout) {
-	console.log('laiuzheuizabhez');
 	////////////////// INIT ////////////////////////////////
 	var allStates = Zips.listeStates( function (data){
-		
 		$scope.allStates = allStates;
 	});
 	
@@ -36,19 +39,22 @@ graddleFrontControllerz.controller('gr_controllerz.main', function($scope,
 	$scope.getAllZips = function() {
 		$scope.showProgress = true;
 		$timeout(function(){
-			var allZips = Zips.query(function(Zips) {
+			var allZips = Zips.query({details : $scope.stateToFind} , 
+				function(Zips) {
 				$scope.listeZip = allZips;
 				$scope.showProgress = false;
 			});			
 		} 
-		, 5 * 1000 ); 
+		, 2 * 1000 ); 
 	};
 
 });
 // ////////////////////////////////////////////////////////////////////
-// / controleur des modals de modification des zips
+//
+//  controleur des modals de modification des zips
+//
 // ////////////////////////////////////////////////////////////////////
-angular.module('graddleFrontControllerz').controller('ModalDemoCtrl',
+angular.module('graddleFrontControllerz').controller('ModalModifCtrl',
 		function($scope, $modalInstance, zip) {
 
 			$scope.zip = zip;

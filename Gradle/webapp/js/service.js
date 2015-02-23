@@ -7,7 +7,7 @@ graddleFrontService.factory('Zips', function($resource ) {
 				  query : {
 					  method : 'GET',
 					  isArray : true ,
-					  params : {action:'all' , details: '@det_state'}
+					  params : {action:'all'}
 				  } , 
 				  
 				  listeStates : {
