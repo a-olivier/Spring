@@ -1,9 +1,9 @@
-package hello.application.mongo.repo.impl;
-
-import hello.application.beans.Zips;
+package city.application.mongo.repo.impl;
 
 import java.net.UnknownHostException;
 import java.util.List;
+
+import city.application.beans.Zips;
 
 public interface iZipsRepositoryCriteria {
 

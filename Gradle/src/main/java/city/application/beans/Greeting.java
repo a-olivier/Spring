@@ -1,4 +1,4 @@
-package hello.application.beans;
+package city.application.beans;
 
 public class Greeting {
 

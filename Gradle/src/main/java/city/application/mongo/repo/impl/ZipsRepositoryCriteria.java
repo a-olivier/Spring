@@ -1,10 +1,9 @@
 /**
  * 
  */
-package hello.application.mongo.repo.impl;
+package city.application.mongo.repo.impl;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
-import hello.application.beans.Zips;
 
 import java.net.UnknownHostException;
 import java.util.List;
@@ -13,6 +12,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+
+import city.application.beans.Zips;
 
 import com.mongodb.MongoClient;
 

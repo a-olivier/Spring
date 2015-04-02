@@ -1,12 +1,12 @@
-package hello.application.mongo.repo;
-
-import hello.application.beans.Zips;
+package city.application.mongo.repo;
 
 import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+
+import city.application.beans.Zips;
 
 @Repository
 public interface ZipsRepository extends MongoRepository<Zips, String> {
