@@ -36,7 +36,7 @@ public class ZipController {
 	
 	
 	@RequestMapping("/state/all")
-	public List<String> getState(){		
+	public List<String> getAllStates(){		
 		
 		List<Zips> findDistinctAllState = repository.findAll();
 		
@@ -52,7 +52,7 @@ public class ZipController {
 	}
 	
 	@RequestMapping("/all")
-	public List<Zips> getAllStates(){
+	public List<Zips> getAllZips(){
 		List<Zips> allZip =  repository.findAll();
 		
 		for (Iterator iterator = allZip.iterator(); iterator.hasNext();) {
@@ -91,6 +91,8 @@ public class ZipController {
 		
 	}
 	
-	
+	private void displayListe(List<Object> input){
+		
+	}
 	
 }

@@ -21,7 +21,7 @@ apply plugin: 'war'
 
 jar {
     manifest {
-    	attributes 'Implementation-Title' : 'Spring MVC et Mongo', 
+    	attributes 'Implementation-Title' : 'Test Gradle / Mongo / Srping / Angular', 
     		'Implementation-Version' : '0.0.1'
     }
 }
@@ -50,14 +50,5 @@ dependencies {
 }
 
 
-test {
-    systemProperties 'property': 'value'
-}
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
 }
