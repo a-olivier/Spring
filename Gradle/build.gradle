@@ -40,6 +40,7 @@ dependencies {
     compile group: 'org.springframework.data', 	name: 'spring-data-mongodb', version: '1.6.1.RELEASE'
     compile group: 'org.springframework.boot', 	name: 'spring-boot-starter-data-mongodb'
     compile group: 'org.springframework.boot',  name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot',  name: 'spring-boot-starter-log4j'
         
     ///////////////// TEST /////////////////////////////////////////////////////////////////
     testCompile group: "junit", 				name: "junit", 				 version: "4.+"
@@ -50,5 +51,13 @@ dependencies {
 }
 
 
-
+task deploy (dependsOn: war){
+    copy {
+        from "build/libs"
+        into "C:/Program Files/Apache-tomcat/apache-tomcat-7.0.59/webapps"
+        include "*.war"
+    }
 }
+
+
+

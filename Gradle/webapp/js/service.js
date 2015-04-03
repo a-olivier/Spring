@@ -13,8 +13,17 @@ graddleFrontService.factory('Zips', function($resource ) {
 				  listeStates : {
 					  method : 'GET' ,
 					  isArray : true, 
-					  params : { action:'state' , details: 'all'}
+					  params : { action:'states' , details: 'all'}
+				  } , 
+				  
+				  updateZip : {
+					  method : 'POST', 
+					  params : {action : 'id'},
+					  headers: {
+				            'Content-Type': 'application/json'
+				        }
+				  		
 				  }
+				  
 			  }); 
 	});
-

@@ -35,8 +35,8 @@ public class ZipController {
 	}
 	
 	
-	@RequestMapping("/state/all")
-	public List<String> getAllStates(){		
+	@RequestMapping("/states/all")
+	public Set<String> getAllStates(){		
 		
 		List<Zips> findDistinctAllState = repository.findAll();
 		
@@ -46,9 +46,9 @@ public class ZipController {
 		}
 		
 		for (String uniQ : setState) {
-			System.out.println(uniQ);
+			System.out.println(" :: " + uniQ);
 		}
-	return new ArrayList<String>(setState);
+	return setState;
 	}
 	
 	@RequestMapping("/all")
